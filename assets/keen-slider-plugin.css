@@ -1,0 +1,343 @@
+/**
+ * Keen Slider Plugin - Custom Styles
+ * Structure matches official example: https://keen-slider.io
+ */
+
+.keen-slider-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.keen-slider-wrapper .keen-slider {
+  width: 100%;
+}
+
+/* Equal-width slides - professional look */
+.keen-slider__slide {
+  flex-shrink: 0;
+  flex-grow: 0;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.keen-slider__slide-inner {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Arrows - positioned outside content area */
+.keen-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.keen-slider-arrow:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.keen-slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.keen-slider-arrow--prev {
+  left: -15px;
+}
+
+.keen-slider-arrow--next {
+  right: -15px;
+}
+
+/* Dots - pill style: inactive circles, active elongated pill */
+.keen-slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.keen-slider-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #4c5763;
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease, border-radius 0.25s ease;
+}
+
+.keen-slider-dot:hover {
+  background: #5c6773;
+}
+
+.keen-slider-dot.is-active {
+  width: 32px;
+  height: 8px;
+  border-radius: 4px;
+  background: #3f8cff;
+}
+
+/* Dynamic & saved slides (from admin UI) - explicit height like official example */
+.keen-slider__slide--dynamic,
+.keen-slider__slide--saved {
+  display: flex;
+  align-items: stretch;
+  min-height: 200px;
+}
+
+.keen-slider__slide-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.keen-slider__slide-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.keen-slider__slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.keen-slider__slide-content {
+  padding: 16px;
+  flex: 1;
+}
+
+.keen-slider__slide-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.keen-slider__slide-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.keen-slider__slide-title a:hover {
+  text-decoration: underline;
+}
+
+.keen-slider__slide-excerpt {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Review / Testimonial card layout - equal width & height for professional look */
+.keen-slider__slide--review .keen-slider__slide-inner {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.keen-slider__google-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keen-slider__google-icon .keen-slider__google-g {
+  width: 100%;
+  height: 100%;
+}
+
+.keen-slider__review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.keen-slider__review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.keen-slider__avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keen-slider__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.keen-slider__avatar--initial {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.keen-slider__review-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.keen-slider__review-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.keen-slider__review-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.keen-slider__star {
+  color: #e5e7eb;
+}
+
+.keen-slider__star--filled {
+  color: #f59e0b;
+}
+
+.keen-slider__review-content {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4b5563;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+}
+
+/* Modal (lightbox) overlay */
+body.keen-slider-modal-open {
+  overflow: hidden;
+}
+
+.keen-slider-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  animation: keen-slider-modal-fade 0.2s ease;
+}
+
+@keyframes keen-slider-modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.keen-slider-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.keen-slider-modal-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  animation: keen-slider-modal-scale 0.25s ease;
+}
+
+@keyframes keen-slider-modal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.keen-slider-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.keen-slider-modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.keen-slider-modal-body {
+  padding: 48px 24px 24px;
+  max-width: 600px;
+}

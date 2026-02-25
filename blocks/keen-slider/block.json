@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "keen-slider/slider",
+  "version": "1.0.0",
+  "title": "Keen Slider",
+  "category": "media",
+  "icon": "slides",
+  "description": "Insert a slider created in the Sliders admin.",
+  "attributes": {
+    "sliderId": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "keen-slider",
+  "editorScript": "file:./editor.js"
+}
